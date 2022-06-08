@@ -2,11 +2,13 @@ let mainDiv = document.getElementById("app");
 let textInput = document.getElementById("movie")
 let button = document.getElementById("go");
 let newPEl = document.createElement("p");
-
+let imgEl = document.getElementById('renderMovieImg')
+let movieTitleEl = document.getElementById('movieTitle')
 
 
 
 function fetchMovie(movie) {
+  
   // console.log('movie:',movie)
   mainDiv.textContent = "";
   let requestUrl = `https://www.omdbapi.com/?apikey=5385144e&t=${movie}&plot=full`;
@@ -19,19 +21,21 @@ function fetchMovie(movie) {
       console.log(data);
       let posterImg = document.createElement("img");
       posterImg.src = data.Poster;
-      mainDiv.appendChild(posterImg);
+      imgEl.appendChild(posterImg);
       mainDiv.appendChild(newPEl);
+      
 
+        let movieTitle = data['Title']
+        movieTitleEl.textContent += movieTitle;
       //Initial Ratings returned in Array
       let ratingsArr = data.Ratings;
     
       //console.log("ratingsArr", ratingsArr);
       ratingsArr.forEach((rating) => {
-        console.log("inside raitings", rating);
         newPEl.textContent += `${rating.Source}:${rating.Value} `;
         mainDiv.appendChild(newPEl);
-        // newPEl.appendChild(breakEl)
       });
+
 
       //deleting data arrays within arrays to later 
       delete data.Ratings;
@@ -46,15 +50,16 @@ function fetchMovie(movie) {
     });
 }
 
-textInput.addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    getInputValue()
-  }
-});
+// textInput.addEventListener("keypress", function(e) {
+//   if (e.key === "Enter") {
+//     e.preventDefault();
+//     getInputValue()
+//   }
+// });
 
 //fetch movieAPI
 function getInputValue() {
+  
   // Selecting the input element and get its value
   var inputVal = document.getElementById("movie").value;
   fetchMovie(inputVal);

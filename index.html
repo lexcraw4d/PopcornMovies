@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Movies and pOpCoRn!</title>
 </head>
-    <input type="text" id="movie"  style="width:300px" placeholder="Enter a movie! I swear it's fun!"/>
-    <button id="go" onclick="getInputValue()">Popcorn</button>
-    <div id="app">
+
+<nav class="navbar bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand">Get that movie!</a>
+      <div class="d-flex" role="search">
+        <input class="form-control" me-2" type="search" id="movie" placeholder="Search" aria-label="Search">
+        <button id="go" onclick="getInputValue()" class="btn btn-outline-info">Popcorn</button>
+      </div>
     </div>
+  </nav>
+ <!-- <div class="container-fluid" id="renderMovieImg"></div> -->
+ <div class="card mb-3 d-flex justify-content-center">
+    <div class="row g-0">
+      <div class="col-md-6 d-flex justify-content-center align-items-center" style="max-height:800px" id="renderMovieImg">
+        <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+      </div>
+      <div class="col-md">
+        <div class="card-body">
+          <h5 class="card-title" id = "movieTitle"></h5>
+          <p class="card-text" id = "app">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <!-- <div id="app">
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Initial render -->
 </body>
 <script src = "script.js"></script>
 </html>
