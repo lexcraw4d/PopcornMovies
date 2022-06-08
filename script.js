@@ -4,12 +4,14 @@ let button = document.getElementById("go");
 let newPEl = document.createElement("p");
 let imgEl = document.getElementById('renderMovieImg')
 let movieTitleEl = document.getElementById('movieTitle')
-
+let cardText = document.getElementById("card-text")
 
 
 function fetchMovie(movie) {
   
   // console.log('movie:',movie)
+  console.log('card', cardText)
+  movieTitleEl.textContent = "";
   mainDiv.textContent = "";
   let requestUrl = `https://www.omdbapi.com/?apikey=5385144e&t=${movie}&plot=full`;
 
