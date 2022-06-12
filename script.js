@@ -8,29 +8,31 @@ let cardText = document.getElementById("card-text")
 
 
 function fetchMovie(movie) {
-  
+  imgEl.innerHTML = "";
+  newPEl.innerHTML = "";
   // console.log('movie:',movie)
   console.log('card', cardText)
   movieTitleEl.textContent = "";
   mainDiv.textContent = "";
   let requestUrl = `https://www.omdbapi.com/?apikey=5385144e&t=${movie}&plot=full`;
-
+  
   fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      let posterImg = document.createElement("img");
-      posterImg.src = data.Poster;
-      imgEl.appendChild(posterImg);
-      mainDiv.appendChild(newPEl);
-      
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
 
-        let movieTitle = data['Title']
-        movieTitleEl.textContent += movieTitle;
-      //Initial Ratings returned in Array
-      let ratingsArr = data.Ratings;
+    let posterImg = document.createElement("img");
+    posterImg.src = data.Poster;
+    imgEl.appendChild(posterImg);
+    mainDiv.appendChild(newPEl);
+    
+    
+    let movieTitle = data['Title']
+    movieTitleEl.textContent += movieTitle;
+    //Initial Ratings returned in Array
+    let ratingsArr = data.Ratings;
     
       //console.log("ratingsArr", ratingsArr);
       ratingsArr.forEach((rating) => {
@@ -39,7 +41,7 @@ function fetchMovie(movie) {
       });
 
 
-      //deleting data arrays within arrays to later 
+      //deleting previous info to manipulate where I want and still use the rest of the array
       delete data.Ratings;
       delete data.Poster;
       delete data.imdbID;
@@ -52,12 +54,12 @@ function fetchMovie(movie) {
     });
 }
 
-// textInput.addEventListener("keypress", function(e) {
-//   if (e.key === "Enter") {
-//     e.preventDefault();
-//     getInputValue()
-//   }
-// });
+textInput.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    getInputValue()
+  }
+});
 
 //fetch movieAPI
 function getInputValue() {
