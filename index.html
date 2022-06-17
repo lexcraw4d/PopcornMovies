@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Assets/style.css">
     <title>Movies and pOpCoRn!</title>
 </head>
 
@@ -13,27 +14,17 @@
       <a class="navbar-brand">Get that movie!</a>
       <div class="d-flex" role="search">
         <input class="form-control" me-2" type="search" id="movie" placeholder="Search" aria-label="Search">
-        <button id="go" onclick="getInputValue()" class="btn btn-outline-info">Popcorn</button>
+        <button id="go" onclick="getInputValue()" class="btn btn-outline-info">pOpCoRn!</button>
       </div>
     </div>
   </nav>
- <!-- <div class="container-fluid" id="renderMovieImg"></div> -->
- <div class="card mb-3 d-flex justify-content-center">
-    <div class="row g-0">
-      <div class="col-md-6 d-flex justify-content-center align-items-center" style="max-height:800px" id="renderMovieImg">
-        <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
-      </div>
-      <div class="col-md">
-        <div class="card-body">
-          <h5 class="card-title" id = "movieTitle"></h5>
-          <p class="card-text" id = "app">Enter a movie...</p>
-          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-          <!-- <div id="app">
-          </div> -->
-        </div>
-      </div>
+  <div class="row">
+ <div class="container col-3" >
+
+   <div class="card d-flex justify-content-center "id="movieInfo">
     </div>
-  </div>
+ </div>
+ </div>
 
 
   <!-- Initial render -->

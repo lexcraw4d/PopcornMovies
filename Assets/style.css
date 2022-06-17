@@ -1,0 +1,13 @@
+body {
+    background: url(./film.jpeg);
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* display: flex;
+    justify-content:  ; */
+}
+
+
+p {
+    font-size: small;
+}
