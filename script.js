@@ -52,14 +52,14 @@ async function fetchMovie(movie) {
               
                 Type = data.Type;
                 Website = data.Website;
-                Write = data.Write;
+                Writer = data.Writer;
 
                 imdbRating = data.imdbRating;
                 imdbVotes = data.imdbVotes;
 
                 if (Poster != "N/A") {
-                  movieInfoEl.innerHTML += `<div class="card row" >
-       <img class="card-img-top" src=${Poster} alt="Card image cap">
+                  movieInfoEl.innerHTML += `  <div class="col-sm-4">
+       <img class="card-img-top" src=${Poster} style= "height: 35rem"alt="Card image cap">
        <div class="card-body">
          <p class="card-text">${Title}</p>
          <p class="card-text">Year: ${Year}</p>
@@ -76,7 +76,7 @@ async function fetchMovie(movie) {
          <p class="card-text">Runtime: ${Runtime}</p>
          <p class="card-text">Type: ${Type}</p>
          <p class="card-text">Website: ${Website}</p>
-         <p class="card-text">Write: ${Write}</p>
+         <p class="card-text">Writer: ${Writer}</p>
          <p class="card-text">imdbRating: ${imdbRating}</p>
          <p class="card-text">imdbVotes: ${imdbVotes}</p>
          
@@ -84,8 +84,8 @@ async function fetchMovie(movie) {
      </div>`;
                   //  mainDiv.appendChild(newPEl);
                 } else {
-                  movieInfoEl.innerHTML += `<div class="card row"">
-      <img class="card-img-top"    src="./Assets/noPosterFound.png" alt="Card image cap">
+                  movieInfoEl.innerHTML += `<div class="col-sm-4">
+      <img class="card-img-top"   style= "height: 35rem" src="./Assets/noPosterFound.png" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">${Title}</p>
         <p class="card-text">Year: ${Year}</p>
@@ -102,7 +102,7 @@ async function fetchMovie(movie) {
         <p class="card-text">Runtime: ${Runtime}</p>
         <p class="card-text">Type: ${Type}</p>
         <p class="card-text">Website: ${Website}</p>
-        <p class="card-text">Write: ${Write}</p>
+        <p class="card-text">Writer: ${Writer}</p>
         <p class="card-text">imdbRating: ${imdbRating}</p>
         <p class="card-text">imdbVotes: ${imdbVotes}</p>
         

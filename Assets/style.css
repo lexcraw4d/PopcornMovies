@@ -1,13 +1,22 @@
-body {
-    background: url(./film.jpeg);
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    /* display: flex;
-    justify-content:  ; */
+.container {
+    background: url(./popcorn.jpg);
+    grid-area: content;
+    padding-top: 15%;
+    background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
 }
 
-
+/* .row {
+    background-color: bisque;
+} */
 p {
-    font-size: small;
+    font-size: smaller;
+    background-color: black;
+    color: white;
+    opacity: 75%;
+    padding: 10px
 }
